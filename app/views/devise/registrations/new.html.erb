@@ -1,30 +1,31 @@
-<h2>Sign up</h2>
-
 <div class="container">
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
+  <div class="box">
+    <h2>Sign up</h2>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
     <div class="form-group has-icon">
-        <p><strong>Name</strong></p>
-        <%= f.text_field :name, autofocus: true, class:"form-control", id:"inputName"%>
-        <span class="fa fa-user form-control-icon" aria-hidden="true"></span>
+      <p><strong>Name</strong></p>
+      <%= f.text_field :name, autofocus: true, class:"form-control", class: "name", id:"inputName"%>
+      <span class="fa fa-user form-control-icon" aria-hidden="true"></span>
     </div>
     <div class="form-group has-icon">
       <p><strong>Email</strong></p>
-        <%= f.email_field :email, class:"form-control", id:"inputEmail"%>
-        <span class="fa fa-envelope form-control-icon" aria-hidden="true"></span>
+      <%= f.email_field :email, class:"form-control", class: "email", id:"inputEmail"%>
+      <span class="fa fa-envelope form-control-icon" aria-hidden="true"></span>
     </div>
     <div class="form-group has-icon">
-      <p><strong>Password</strong> (6 characters minimum) </p>
-        <%= f.password_field :password, autocomplete: "off", class:"form-control", id:"inputPassword"%>
-        <span class="fa fa-lock form-control-icon" aria-hidden="true"></span>
+      <p><strong>Password</strong> <i>(6 characters minimum)</i> </p>
+      <%= f.password_field :password, autocomplete: "off", class:"form-control", class: "password", id:"inputPassword"%>
+      <span class="fa fa-lock form-control-icon" aria-hidden="true"></span>
     </div>
     <div class="form-group has-icon">
       <p><strong>Password confirmation</strong></p>
-        <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", id:"inputConfirmPassword"%>
-         <span class="fa fa-check-circle-o form-control-icon" aria-hidden="true"></span>
+      <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", class: "password_confirm", id:"inputConfirmPassword"%>
+      <span class="fa fa-check-circle-o form-control-icon" aria-hidden="true"></span>
     </div>
-        <%= f.submit "Sign up", class:"btn btn-default" %>
+    <%= f.submit "Sign up", class:"btn btn-default" %>
+    <%= render "devise/shared/links" %>
     <% end %>
+  </div>
 </div>
 
-<%= render "devise/shared/links" %>

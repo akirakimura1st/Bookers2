@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'users#home'
   get 'users/index'
   get 'users/edit'
   get 'users/show'

@@ -1,2 +1,31 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<div class="body">
+	<div class="container">
+		<div class="row">
+			<%= render "users/userinfo", user:@Book.user, book:@book %>
+			<h2>Book detail</h2>
+			<div class="col-xs-9">
+				<table class="table">
+					<tbody>
+						<tr>
+							<td>
+								<%= attachment_image_tag @Book.user.image, :image,size: "40x40",format: 'jpeg',fallback: "no_image.jpg", class: "userimage" %>
+							</td>
+							<td>
+								<%= @Book.title %>
+							</td>
+							<td>
+								<%= @Book.opinion %>
+							</td>
+							<td>
+								<%= link_to "edit", edit_book_path(@Book) %>
+							</td>
+							<td>
+								<%= link_to "destroy", book_path(@Book),method: :delete %>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

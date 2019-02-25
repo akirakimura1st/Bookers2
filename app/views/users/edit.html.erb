@@ -1,2 +1,11 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="box"></div>
+<h1>User Info</h1>
+<%= form_for(@user) do |f| %>
+	<p>Name</p>
+	<%= f.text_field :name %>
+	<p>iamge</p>
+	<%= f.attachment_field :image %>
+	<p>Introduction</p>
+	<%= f.text_area :introduction %>
+	<%= f.submit 'Update User' %>
+<% end %>

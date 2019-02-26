@@ -40,7 +40,7 @@ class BooksController < ApplicationController
 			flash[:notice] = "updated successfully"
 		redirect_to book_path(@book)
 	else
-		render(edit_user_password_path.id)
+		render 'edit'
 	end
 	end
 

@@ -13,12 +13,14 @@
 					<tbody>
 						<tr>
 							<td>
-							<%= link_to user_path(@bookf.user) do %>
+								<!-- class ol -->
+								<%= link_to user_path(@bookf.user), class: "book_#{@book.id}" do %>
+								<!-- class ok -->
 
 								<%= attachment_image_tag @bookf.user, :image,size: "40x40",format: 'jpeg',fallback: "no_image.jpg", class: "userimage" %> <br>
-								<%= @bookf.user.name %>
+								<%= @bookf.user.username %>
 
-							<% end %>
+								<% end %>
 
 							</td>
 							<td>
@@ -29,10 +31,14 @@
 							</td>
 							<% if current_user.id == @bookf.user_id %>
 							<td>
-								<%= link_to "edit", edit_book_path(@bookf), class: "btn btn-success" %>
+								<!-- class ok -->
+								<%= link_to "edit", edit_book_path(@bookf), class: "btn btn-success edit_book_#{@book.id}" %>
+								<!-- class ok -->
 							</td>
 							<td>
-								<%= link_to "destroy", book_path(@bookf),method: :delete, class: "btn btn-danger" %>
+								<!-- class ok -->
+								<%= link_to "destroy", book_path(@bookf),method: :delete, class: "btn btn-danger destroy_book_#{@book.id}", data: { confirm: '本当に削除しますか？' } %>
+								<!-- class ok -->
 							</td>
 							<% end %>
 						</tr>
@@ -42,3 +48,4 @@
 		</div>
 	</div>
 </div>
+<%= render "footer", user:@user, book:@book %>

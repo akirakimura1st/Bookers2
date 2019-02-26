@@ -19,12 +19,12 @@
 
 
 header {
-	color: white;
-	font-size: 20px;
+    color: white;
+    font-size: 20px;
 }
 
 nav {
-	font-size: 13px;
+    font-size: 13px;
 }
 
 body {
@@ -37,8 +37,25 @@ body {
 }
 
 .body {
-	padding-top: 51px;
+    padding-top: 51px;
 }
  .navbar-nav > li > a {
- 	line-height: 40px;
+    line-height: 40px;
  }
+
+ .succesflash {
+    color: green;
+ }
+
+ a {
+    color: #888;
+ }
+
+ .margin {
+    margin-top: 15px;
+ }
+
+.margin_auto {
+    margin: 0 auto;
+    width: 70%;
+}

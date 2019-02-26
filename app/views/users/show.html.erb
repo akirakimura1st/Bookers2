@@ -1,4 +1,9 @@
 <div class="body">
+	<% if flash[:notice] %>
+      <div class="succesflash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
 	<div class="container">
 		<div class="row">
 			<div class="box"></div>

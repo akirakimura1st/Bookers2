@@ -1,27 +1,40 @@
 <div class="body">
+	<% if flash[:notice] %>
+	<div class="succesflash">
+		<%= flash[:notice] %>
+	</div>
+	<% end %>
 	<div class="container">
 		<div class="row">
-			<%= render "users/userinfo", user:@Book.user, book:@book %>
+			<%= render "users/userinfo", user:@bookf.user, book:@book %>
 			<h2>Book detail</h2>
 			<div class="col-xs-9">
 				<table class="table">
 					<tbody>
 						<tr>
 							<td>
-								<%= attachment_image_tag @Book.user.image, :image,size: "40x40",format: 'jpeg',fallback: "no_image.jpg", class: "userimage" %>
+							<%= link_to user_path(@bookf.user) do %>
+
+								<%= attachment_image_tag @bookf.user, :image,size: "40x40",format: 'jpeg',fallback: "no_image.jpg", class: "userimage" %> <br>
+								<%= @bookf.user.name %>
+
+							<% end %>
+
 							</td>
 							<td>
-								<%= @Book.title %>
+								<%= @bookf.title %>
 							</td>
 							<td>
-								<%= @Book.opinion %>
+								<%= @bookf.opinion %>
+							</td>
+							<% if current_user.id == @bookf.user_id %>
+							<td>
+								<%= link_to "edit", edit_book_path(@bookf), class: "btn btn-success" %>
 							</td>
 							<td>
-								<%= link_to "edit", edit_book_path(@Book) %>
+								<%= link_to "destroy", book_path(@bookf),method: :delete, class: "btn btn-danger" %>
 							</td>
-							<td>
-								<%= link_to "destroy", book_path(@Book),method: :delete %>
-							</td>
+							<% end %>
 						</tr>
 					</tbody>
 				</table>

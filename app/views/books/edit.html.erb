@@ -1,15 +1,16 @@
-<div class="box"></div>
-<div class="container">
-<div class="text_center">
-<h1>Editing Book</h1>
-<div class="form-group">
-<%= form_for(@book) do |f| %>
-<p>Title</p>
-<%= f.text_field :title %>
-<p>Opinion</p>
-<%= f.text_area :opinion %>
-<%= f.submit 'Update Book' %>
-<% end %>
-</div>
-</div>
+<div class="body">
+	<div class="container">
+		<div class="text_center">
+			<h1>Editing Book</h1>
+			<div class="form-group">
+				<%= form_for(@book) do |f| %>
+				<p>Title</p>
+				<%= f.text_field :title %>
+				<p>Opinion</p>
+				<%= f.text_area :opinion %>
+				<%= f.submit 'Update Book' %>
+				<% end %>
+			</div>
+		</div>
+	</div>
 </div>
